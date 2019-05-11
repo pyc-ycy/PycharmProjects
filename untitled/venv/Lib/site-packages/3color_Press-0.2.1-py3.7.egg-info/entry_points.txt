@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        3color=threecolor.manager:cli
+        

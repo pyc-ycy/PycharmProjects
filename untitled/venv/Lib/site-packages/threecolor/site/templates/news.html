@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+  <h2 id="page_title">News Posts</h2>
+{% endblock title %}
+{% block content %}
+    {% for p in news_page %}
+    <div id="news_blurb">
+      <div class="news_blurb {{ loop.cycle('odd', 'even') }}">
+        <h2 id="page_title"><a href="{{ url_for('.news_page', name=p.path.replace('news/', '')) }}">{{ p.title }}</a></h2>
+          {{ p.body|truncate(255) }}
+      </div>
+    </div>
+    {% endfor %}
+{% endblock content %}
+{% block content_footer %}
+{% endblock content_footer %}
